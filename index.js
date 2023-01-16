@@ -11,7 +11,9 @@ connectDB();
 
 app.set(cors());
 app.use(express.json());
-
+app.get("/", (req, res) => {
+  res.send("Welcome to Spotify Api with NodeJs")
+})
 app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/spotify", spotifyRoutes);
 app.use("/api", playlistRoutes);
